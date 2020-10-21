@@ -81,6 +81,24 @@ Para rodar esse subprojeto, siga as seguintes etapas:
 
 ## Instruções para o subprojeto da *Plataforma Web*
 
+1. Para executar essa parte do projeto é necessário ter o NodeJS instalado.
+
+1. Após instalado, abra um terminal na pasta `client`
+
+1. Execute o comando para instalar as dependências
+
+    ```
+    npm install
+    ```
+
+1. Execute o comando para rodar a plataforma.
+
+    ```
+    npm run serve
+    ```
+
+1. Então a plataforma inicializará com uma lista pré-carregada de processos e funcionará conforme o vídeo.
+
 
 
 
