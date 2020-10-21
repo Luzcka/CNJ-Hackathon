@@ -10,7 +10,7 @@ from flask_restplus import reqparse, abort, Api, Resource, fields
 
 CONFIG_FILE_NAME = "GroupAPI.yaml"
 JSON_DB_NAME = "db.json"
-JSON_DB_NAME_FONTE = "processos_menor.json"
+JSON_DB_NAME_FONTE = "processos.json"
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 
  # Load configuration
