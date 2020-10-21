@@ -101,8 +101,8 @@ class SearchPilotProcessInfo(Resource):
             processo = Query()
             cnpj_demandada = cnpj_demandada[0:8]
             query_result = db.search((where('cnpj_demandada').matches(cnpj_demandada + ".*")) &
-                                     (processo.num_processo_piloto == "") &
-                                     (processo.sigla_tribunal_piloto == "") &
+                                     #(processo.num_processo_piloto == "") &
+                                     #(processo.sigla_tribunal_piloto == "") &
                                      (processo.situacao == "em_execucao"))
             result = jsonify({"pilotos":query_result})
         except Exception as erro:
