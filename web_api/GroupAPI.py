@@ -5,7 +5,7 @@ import yaml
 from tinydb import TinyDB, Query, where
 from flask import Flask, jsonify, request
 from flask_restplus import reqparse, abort, Api, Resource, fields
-
+from flask_cors import CORS
 
 
 CONFIG_FILE_NAME = "GroupAPI.yaml"
@@ -22,6 +22,7 @@ JsonDB = os.path.join(RootDataDir, JSON_DB_NAME)
 JsonDBFonte = os.path.join(RootDataDir, JSON_DB_NAME_FONTE)
 
 app = Flask(__name__)
+CORS(app)
 api = Api(app=app, version="0.1", 
           title="API RESTplus de agrupamento de execuções",
           description="API RESTplus de agrupamento de execuções")
