@@ -10,13 +10,14 @@ O projeto é organizado em três subprojetos:
 2. [APIs para reunião de execuções](#instruções-para-o-subprojeto-das-apis-para-reunião-de-execuções)
 3. [Plataforma Web para interação com o usuário](#instruções-para-o-subprojeto-da-plataforma-web)
 
+Nesse subprojetos utilizamos a linguagem `Python 3` em conjunto com o gerenciador de pacotes `pip` e ambientes virtuais criados utilizando o `conda`.
 
 
 ## Instruções para o subprojeto de *Pré-processamento da base de dados*
 
 1. Descompacte todas as pastas relacionadas a justiça do trabalho.
 
-1. Mova as pastas descompactadas da justiça do trabalho (`processos-trtX`) para dentro da pasta `database_processing/data/justica_trabalho/`.
+1. Mova as pastas descompactadas da justiça do trabalho (`processos-trtXX`) para dentro da pasta `database_processing/data/justica_trabalho/`.
 
 1. Mova o arquivo `mpm_serventias.csv` para a pasta `database_processing/data/`
 
@@ -25,8 +26,8 @@ O projeto é organizado em três subprojetos:
 1. Crie um ambiente usando o comando e depois ative com os comandos:
 
     ```
-    conda create -n text_mining_env python=3.7 pylint
-    conda activate text_mining_env
+    conda create -n data_proc_env python=3.7 pylint
+    conda activate data_proc_env
     ```
 
 1. Instale as dependências com o seguinte comando.
@@ -41,17 +42,48 @@ O projeto é organizado em três subprojetos:
     python database_processing.py
     ```
 
-1. Após concluído, mova o arquivo de nome `processos.json` da pasta `data/`  para o subprojeto X na pasta Y 
+1. Nessa etapa serão criadas duas bases, sendo uma relacionada há um conjunto de CNPJs fictícios, mas válidos, e outras contendo uma versão mais enxuta da base de dados proveniente do Datajud.
+
+1. Após concluído, mova os arquivos de nome `db.json` e `processos.json` da pasta `database_processing/data/`  para a pasta externa (no primeiro nível) `data/`. 
 
 
 ## Instruções para o subprojeto das *APIs para reunião de execuções*
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi gravida libero nec velit. Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam. Proin mattis lacinia justo. Vestibulum facilisis auctor urna. Aliquam in lorem sit amet leo accumsan lacinia. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Phasellus et lorem id felis nonummy placerat. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Aenean vel massa quis mauris vehicula lacinia. Quisque tincidunt scelerisque libero. Maecenas libero. Etiam dictum tincidunt diam. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Suspendisse nisl. Sed convallis magna eu sem. Cras pede libero, dapibus nec, pretium sit amet, tempor quis, urna.
+Para rodar esse subprojeto, siga as seguintes etapas:
+
+1. Abra um terminal apontando para a pasta `web_api/`.
+
+1. Crie um ambiente usando o comando e depois ative com os comandos:
+
+    ```
+    conda create -n web_api_env python=3.7 pylint
+    conda activate web_api_env
+    ```
+
+1. Instale as dependências com o seguinte comando.
+
+    ```
+    pip install -r requirements.txt
+    ```
+
+1. Verifique o arquivo `GroupAPI.yaml`, e certifique que o campo `RootDataDir` aponta para a pasta `data` (externa ao diretório atual) e certifique que os arquivos `db.json` e `processos.json` foram copiados para dentro da referida pasta seguindo os passos da seção anterior.
+
+1. Rode a API com o comando:
+
+    ```
+    python GroupApi.py
+    ```
+
+1. Mantenha o terminal aberto para poder utilizar a interface de usuário.
+
+1. É possível visualizar a documentação da API acessando o link:
+   http://0.0.0.0:5610/
 
 ## Instruções para o subprojeto da *Plataforma Web*
 
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Morbi gravida libero nec velit. Morbi scelerisque luctus velit. Etiam dui sem, fermentum vitae, sagittis id, malesuada in, quam. Proin mattis lacinia justo. Vestibulum facilisis auctor urna. Aliquam in lorem sit amet leo accumsan lacinia. Integer rutrum, orci vestibulum ullamcorper ultricies, lacus quam ultricies odio, vitae placerat pede sem sit amet enim. Phasellus et lorem id felis nonummy placerat. Fusce dui leo, imperdiet in, aliquam sit amet, feugiat eu, orci. Aenean vel massa quis mauris vehicula lacinia. Quisque tincidunt scelerisque libero. Maecenas libero. Etiam dictum tincidunt diam. Donec ipsum massa, ullamcorper in, auctor et, scelerisque sed, est. Suspendisse nisl. Sed convallis magna eu sem. Cras pede libero, dapibus nec, pretium sit amet, tempor quis, urna.
+
+
 
 
 
