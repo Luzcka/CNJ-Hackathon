@@ -42,7 +42,7 @@ Nesse subprojetos utilizamos a linguagem `Python 3` em conjunto com o gerenciado
     python database_processing.py
     ```
 
-1. Nessa etapa serão criadas duas bases, sendo uma relacionada há um conjunto de CNPJs fictícios, mas válidos, e outras contendo uma versão mais enxuta da base de dados proveniente do Datajud.
+1. Nessa etapa serão criadas duas bases, sendo uma relacionada a um conjunto de CNPJs fictícios, mas válidos, e outra contendo uma versão mais enxuta da base de dados proveniente do Datajud.
 
 1. Após concluído, mova os arquivos de nome `db.json` e `processos.json` da pasta `database_processing/data/`  para a pasta externa (no primeiro nível) `data/`. 
 
@@ -53,7 +53,7 @@ Para rodar esse subprojeto, siga as seguintes etapas:
 
 1. Abra um terminal apontando para a pasta `web_api/`.
 
-1. Crie um ambiente usando o comando e depois ative com os comandos:
+1. Crie um ambiente e depois ative com os comandos:
 
     ```
     conda create -n web_api_env python=3.7 pylint
@@ -71,7 +71,7 @@ Para rodar esse subprojeto, siga as seguintes etapas:
 1. Rode a API com o comando:
 
     ```
-    python GroupApi.py
+    python GroupAPI.py
     ```
 
 1. Mantenha o terminal aberto para poder utilizar a interface de usuário.

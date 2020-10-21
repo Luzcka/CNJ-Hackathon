@@ -1,5 +1,5 @@
 appName: "GroupAPI"
 
 Input:
-    RootDataDir: "/home/pabloernesto/Work/Hackathons/CNJ-Hackathon/data"
+    RootDataDir: "../data"
 
